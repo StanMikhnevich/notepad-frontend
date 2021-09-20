@@ -1,0 +1,43 @@
+include ../../layout/mixins
+
+.container.max-w-screen-xl.mx-auto.text-gray-500
+    .flex.justify-between.text-xl.px-0.py-8
+        .flex.space-x-4.justify-between.py-2
+            h2.font-semibold.text-2xl.leading-10.text-gray-500 {{ $ctrl.pageTitle }}
+
+            select.bg-transparent.border-transparent.text-center.cursor-pointer.text-sm(class="focus:outline-none" ng-model="$ctrl.per_page")
+                option(value="15") 15
+                option(value="30") 30
+                option(value="50") 50
+                option(value="100") 100
+
+            select.bg-transparent.border-transparent.text-center.cursor-pointer.text-sm(class="focus:outline-none" ng-model="$ctrl.order")
+                option(value="title") Alphabetical
+                option(value="-created_at") Newest
+                option(value="created_at") Oldest
+                option(value="user.name") By user
+
+        .flex.space-x-4.justify-between.py-2(ng-if="$ctrl.user")
+            +headerModalIconButton('plus', 'openCreateNoteModal()')
+
+    #NotesList
+        div.bg-white.mb-5.p-4.px-6.shadow-md.rounded-lg.note-item(
+            id="NoteItem{{ note.id }}"
+            ng-repeat="note in $ctrl.notes.data | filter:$ctrl.query | orderBy:$ctrl.order"
+        )
+            .flex.justify-between
+                span.py-2.text-gray-500
+                    a.text-gray-500.no-underline.font-medium.text-xl(ui-sref="noteShow({noteUID: note.uid })") {{ note.title }}
+                    i.mx-3.mdi.mdi-lock(ng-if="note.private")
+                    i.mx-3.mdi.mdi-attachment(ng-if="note.has_attachments")
+
+                .flex.space-x-8.justify-between.py-2.text-gray-500
+                    span.flex.space-x-4(ng-if="$ctrl.user.id == note.user_id" class="float-end item-actions tr-1 ml-4")
+                        i.mdi.mdi-share.cursor-pointer(ng-click="openShareNoteModal(note.uid)")
+                        i.mdi.mdi-pencil.cursor-pointer(ng-click="openEditNoteModal(note.uid)")
+                        i.mdi.mdi-close.cursor-pointer.text-red-500(ng-click="openDeleteNoteModal(note.uid)")
+
+                    span(ng-if="$ctrl.user.id == note.user_id") You
+                    span(ng-if="$ctrl.user.id !== note.user_id") {{ note.user.name }}
+
+                    span.float-end.ms-3.text-secondary.text-right.text-xl.font-half-lg {{ note.created_at_time_ago }}<br>{{ note.updated_at_time_ago }}

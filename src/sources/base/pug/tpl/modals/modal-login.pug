@@ -1,0 +1,39 @@
+.fixed.pin.inset-0.flex.items-center
+    .fixed.pin.inset-0.bg-black.opacity-50.z-10.cursor-pointer(ng-click="$ctrl.close()")
+
+    .relative(class="relative mx-6 md:mx-auto w-full md:w-1/3 lg:w-1/5 z-20 m-8")
+        .shadow-2xl.bg-white.rounded-lg.p-5
+            .flex.justify-between.modal-header.mb-5
+                h2.font-semibold.text-xl Login
+                i.mdi.mdi-close.cursor-pointer(ng-click="$ctrl.close()")
+
+            form#AppLoginForm
+                .mb-5
+                    label(for="AppAuthLoginEmail")
+                        input#AppAuthLoginEmail.mt-2.p-4.w-full.block.rounded-md.border.border-gray-300.focus_o-300(
+                            class="focus:ring focus:ring-gray-300 focus:ring-opacity-50"
+                            type="email" name="email" placeholder="Email"
+                            ng-model="$ctrl.auth.email" required
+                        )
+
+                .mb-5
+                    label(for="AppAuthLoginPassword")
+                        input#AppAuthLoginPassword.mt-2.p-4.w-full.block.rounded-md.border.border-gray-300.focus_o-300(
+                            class="focus:ring focus:ring-gray-300 focus:ring-opacity-50"
+                            type="password" name="password" placeholder="Password"
+                            ng-model="$ctrl.auth.password" required
+                        )
+
+                .mb-5
+                    label.inline-flex.items-center
+                        input#AppLoginModalRemember.form-checkbox(type="checkbox" name="remember_me" ng-model="$ctrl.auth.remember" )
+                        span.ml-2 Remember me
+
+                button.bg-yellow-300.py-4.w-full.rounded-lg(type="button" ng-if="($ctrl.auth.email.length > 0 && $ctrl.auth.password.length > 0)" ng-click="$ctrl.login()") Login
+
+            hr.my-5
+
+            .text-center
+                a.no-underline.cursor-pointer(ng-click="$ctrl.openAuthRegisterModal()") Register
+                span.mx-4 •
+                a.no-underline.cursor-pointer(ui-sref="authForgotPassword") Forgot password

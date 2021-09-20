@@ -1,0 +1,33 @@
+@import 'includes/vars';
+@import 'includes/resetter';
+@import 'includes/helpers';
+@import 'includes/placeholders';
+@import 'includes/third-party';
+
+// COMMON
+@import 'includes/common';
+
+* {scrollbar-width: thin; scrollbar-color: #CCC #EFF6FF;}
+
+.tr-1 {transition: all 0.25s ease-out;}
+.tr-2 {transition: all 0.5s ease-out;}
+.tr-3 {transition: all 1s ease-out;}
+.tr-4 {transition: all 2s ease-out;}
+.tr-5 {transition: all 5s ease-out;}
+
+
+input:focus, textarea:focus {outline: none !important;}
+
+
+.text-grey {color: #DEDEDE !important;}
+
+.font-half {line-height: 14px; font-size: 50%;}
+.font-half-lg {line-height: 12px; font-size: 60%;}
+
+.note-item {}
+.note-item .item-actions {visibility: hidden; opacity: 0}
+.note-item:hover .item-actions {visibility: visible; opacity: 1}
+
+.note-text {}
+#NotesItem .note-text h1 {font-size: xx-large; font-weight: bold;}
+#NotesItem .note-text img {width: 100%; margin: 1rem 0;}

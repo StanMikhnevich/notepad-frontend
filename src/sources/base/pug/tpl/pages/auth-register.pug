@@ -1,0 +1,28 @@
+.container.xl.mx-auto
+    div(class="bg-white w-max mt-40 lg:mx-auto shadow-2xl p-4")
+        h2.text-3xl.text-center.mb-4 Login
+
+        form#AppLoginForm
+            .mb-5
+                label
+                    input(class="h-12 w-full border-b-2" type="email" name="email" placeholder="Email" ng-model="$ctrl.auth.email" required)
+
+            .mb-5
+                label
+                    input(class="h-12 w-full border-b-2" type="password" name="password" placeholder="Password" ng-model="$ctrl.auth.password" required)
+
+            .mb-5
+                label.inline-flex.items-center
+                    input#AppLoginModalRemember.form-checkbox(type="checkbox" name="remember" ng-model="auth.remember" )
+                    span.ml-2 Remember me
+
+            button.bg-yellow-500.py-4.w-full.rounded-lg(type="button" ng-if="($ctrl.auth.email.length > 0 && $ctrl.auth.password.length > 0)" ng-click="$ctrl.login()") Login
+
+        hr.my-4
+
+        .text-center
+            a.no-underline(ui-sref="notesAll") Notes
+            span.mx-4 •
+            a.no-underline(ui-sref="authRegister") Register
+            span.mx-4 •
+            a.no-underline(ui-sref="authForgotPassword") Forgot password

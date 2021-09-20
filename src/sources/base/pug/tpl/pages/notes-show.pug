@@ -1,0 +1,50 @@
+include ../../layout/mixins
+
+.container.max-w-screen-xl.mx-auto.text-gray-500(ng-cloak)
+    .flex.justify-between.text-xl.px-0.my-8
+        h2.font-semibold.text-2xl.leading-10 {{ $ctrl.note.title }}
+            i.text-gray-500.mx-3.mdi.mdi-lock(ng-if="$ctrl.note.private")
+
+        .flex.space-x-4.justify-between.py-2.text-gray-500
+            span(ng-if="$ctrl.user.id == $ctrl.note.user_id") You
+            span(ng-if="$ctrl.user.id !== $ctrl.note.user_id") {{ $ctrl.note.user.name }}
+            span.float-end.ms-3.text-secondary.text-right.text-xl.font-half {{ $ctrl.note.created_at_time_ago }}<br>{{ $ctrl.note.updated_at_time_ago }}
+
+            .flex.space-x-4.justify-between
+                div(ng-if="!$ctrl.note.private")
+                    +headerModalIconButton('printer', 'openNoteModal()')
+                .flex.space-x-4.justify-between(ng-if="$ctrl.user.id == $ctrl.note.user_id")
+                    .w-12.h-8.bg-white.rounded-lg.no-underline.text-center.shadow-md.cursor-pointer(
+                        ng-click="openShareNoteModal($ctrl.note.uid)")
+                        i.mdi.mdi-share
+                    .w-12.h-8.bg-white.rounded-lg.no-underline.text-center.shadow-md.cursor-pointer(
+                        ng-click="openEditNoteModal($ctrl.note.uid)")
+                        i.mdi.mdi-pencil
+                +headerModalIconButton('plus', 'openCreateNoteModal()')
+
+    #NotesItem.text-gray-700
+        .bg-white.mb-10.p-6.shadow-md.rounded-lg.note-item
+            .note-text(ng-bind-html="$ctrl.note.text_md")
+
+            .note-attachmnets.text-gray-500(ng-if="$ctrl.note.has_attachments")
+                hr.my-5
+                h5.font-semibold.mb-4 Attachments
+
+                #NoteItemAttachments.flex.space-x-4
+                    a.fancybox.iframe.bg-gray-100.px-4.py-2.rounded-full.shadow.no-underline.font-medium.text-gray-500(
+                        href="{{ $ctrl.backend_url + '/storage/' + file.path }}"
+                        data-fancybox="gallery" data-type="iframe"
+                        ng-repeat="file in $ctrl.note.attachments"
+                    )
+                        i.mdi.mdi-attachment.mr-2
+                        | {{ file.original }}
+
+        .note-shares.text-gray-500(ng-if="$ctrl.note.has_sharing")
+            h5.font-semibold.mb-4 Shares
+
+            #NoteItemUsers.flex.space-x-4.text-gray-500.text-xs
+                span.bg-white.px-4.py-2.rounded-full.shadow.no-underline.font-medium(
+                    ng-repeat="share in $ctrl.note.sharing"
+                )
+                    i.mdi.mdi-account-outline.mr-2
+                    | {{ share.user.name }}

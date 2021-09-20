@@ -1,0 +1,45 @@
+include ../../layout/mixins
+
+.fixed.pin.inset-0.flex.items-center
+    .fixed.pin.inset-0.bg-black.opacity-50.z-10.cursor-pointer(ng-click="$ctrl.close()")
+
+    .relative(class="relative mx-6 mx-auto w-1/2 z-20 m-8")
+        .shadow-2xl.bg-white.rounded-lg.p-5
+            .flex.justify-between.modal-header.mb-5
+                h2.font-semibold.text-xl New note
+                i.mdi.mdi-close.cursor-pointer(ng-click="$ctrl.close()")
+
+            form(enctype="multipart/form-data")
+                .mb-5
+                    label(for="AppNoteEditTitle") Title
+                        input#AppNoteEditTitle.mt-2.p-4.w-full.block.rounded-md.border.border-gray-300.focus_o-300(
+                            class="focus:ring focus:ring-gray-300 focus:ring-opacity-50"
+                            type="text" name="title" placeholder="Note title"
+                            ng-model="$ctrl.note.title"
+                        )
+                .mb-5
+                    label(for="AppNoteEditText") Text
+                        textarea#AppNoteEditText.mt-2.p-4.w-full.block.rounded-md.border.border-gray-300.focus_o-300(
+                            class="focus:ring focus:ring-gray-300 focus:ring-opacity-50"
+                            rows="8" name="text" placeholder="Note text"
+                            ng-model="$ctrl.note.text"
+                        )
+
+                .mb-5
+                    label(for="AppNoteEditAttachments") Attachments
+                        input#AppNoteEditAttachments.mt-2.p-4.w-full.block.rounded-md.border.border-gray-300.focus_o-300(
+                            class="focus:ring focus:ring-gray-300 focus:ring-opacity-50"
+                            type="file" name="attachment[]" accept="text/*,image/*,audio/*,video/*" multiple="true"
+                            ng-model="$ctrl.note.attachment"
+                        )
+
+                .mb-5
+                    label.inline-flex.items-center.select-none
+                        input#AppLoginModalPrivate.p-4.block.rounded-md.border.border-gray-300.focus_o-300(
+                            type="checkbox" name="private" ng-model="$ctrl.note.private"
+                        )
+                        span.ml-2 Private
+
+                .text-right.space-x-4
+                    +formButton('arrow-left', 'Cancel', '', 'notesMy')
+                    +formSubmitButton('plus', 'Create', '$ctrl.createNote()', '')

@@ -1,0 +1,45 @@
+mixin navMenuButton(state, title, expression)
+    div(
+        class="inline-flex items-center px-1 pt-1 border-b-4 border-transparent text-sm leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out no-underline"
+        ng-if=expression ui-sref-active="text-gray-900 border-yellow-300 hover:border-yellow-400"
+    )
+        a(class="text-sm text-gray-500 font-mono no-underline py-4" ui-sref=state)= title
+
+mixin navMenuModalButton(modal, title, expression)
+    div(
+        class="inline-flex items-center px-1 pt-1 border-b-4 border-transparent text-sm leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out no-underline"
+        ng-if=expression
+    )
+        a(class="text-sm text-gray-500 font-mono no-underline py-4 cursor-pointer" ng-click=modal)= title
+
+
+
+mixin headerStateIconButton(icon, state)
+    div(class="w-12 h-8 bg-white rounded-lg no-underline text-center shadow-md cursor-pointer" ui-sref=state)
+        i.mdi(class="mdi-" + icon)
+
+mixin headerStateTitleButton(title, state)
+    div(class="w-12 h-8 bg-white rounded-lg no-underline text-center shadow-md cursor-pointer" ui-sref=state)
+        a.no-underline= title
+
+
+
+mixin headerModalIconButton(icon, modal, show)
+    div(class="w-12 h-8 bg-white rounded-lg no-underline text-center shadow-md cursor-pointer" ng-click=modal ng-if=show)
+        i.mdi(class="mdi-" + icon)
+
+mixin headerModalTitleButton(title, modal)
+    div(class="w-12 h-8 bg-white rounded-lg no-underline text-center shadow-md cursor-pointer" ng-click=modal)
+        a.no-underline= title
+
+
+
+mixin formButton(icon, text, action, state)
+    button.px-4.py-2.bg-gray-50.rounded-lg.text-center.shadow-md(type="button" ng-click=action ui-sref=state)
+        i.mdi.mr-4(class="mdi-" + icon)
+        = text
+
+mixin formSubmitButton(icon, text, action, state)
+    button.px-4.py-2.bg-yellow-300.rounded-lg.text-center.shadow-md(type="button" ng-click=action ui-sref=state)
+        i.mdi.mr-4(class="mdi-" + icon)
+        = text

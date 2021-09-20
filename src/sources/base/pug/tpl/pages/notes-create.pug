@@ -1,0 +1,70 @@
+include ../../layout/mixins
+
+.container.max-w-screen-xl.mx-auto.text-gray-500(ng-cloak)
+    .flex.justify-between.text-xl.px-0.py-8
+        h2.font-semibold.text-2xl.leading-10 {{ $ctrl.pageTitle }}
+
+        .flex.space-x-4.justify-between.py-2.text-gray-500
+            +headerStateIconButton('arrow-left', 'notesMy')
+
+    #NotesItem.text-gray-700
+        form(enctype="multipart/form-data")
+            .bg-white.mb-10.p-6.shadow-md.rounded-lg.note-item
+                .mb-5
+                    label(for="AppNoteEditTitle") Title
+                        input#AppNoteEditTitle.mt-2.p-4.w-full.block.rounded-md.border.border-gray-300.focus_o-300(
+                            class="focus:ring focus:ring-gray-300 focus:ring-opacity-50"
+                            type="text" name="title" placeholder="Note title"
+                            ng-model="$ctrl.note.title"
+                        )
+                .mb-5
+                    label(for="AppNoteEditText") Text
+                        textarea#AppNoteEditText.mt-2.p-4.w-full.block.rounded-md.border.border-gray-300.focus_o-300(
+                            class="focus:ring focus:ring-gray-300 focus:ring-opacity-50"
+                            rows="8" name="text" placeholder="Note text"
+                            ng-model="$ctrl.note.text"
+                        )
+
+                .mb-5
+                    label(for="AppNoteEditAttachments") Attachments
+                        input#AppNoteEditAttachments.mt-2.p-4.w-full.block.rounded-md.border.border-gray-300.focus_o-300(
+                            class="focus:ring focus:ring-gray-300 focus:ring-opacity-50"
+                            type="file" name="attachment[]" accept="text/*,image/*,audio/*,video/*" multiple="true"
+                            ng-model="$ctrl.note.attachment"
+                        )
+
+                .mb-5
+                    label.inline-flex.items-center.select-none
+                        input#AppLoginModalPrivate.mt-2.p-4.block.rounded-md.border.border-gray-300.focus_o-300(
+                            type="checkbox" name="private" ng-model="$ctrl.note.private"
+                        )
+                        span.ml-2 Private
+
+                .mb-5.text-right.space-x-4
+                    +formButton('arrow-left', 'Cancel', '', 'notesMy')
+                    +formSubmitButton('plus', 'Create', '$ctrl.createNote()', '')
+
+            .note-attachmnets(ng-if="$ctrl.note.has_attachments")
+                hr.my-5
+                h5.font-semibold.mb-4 Attachments
+
+                #NoteEditAttachments.flex.space-x-4.text-gray-500
+                    a.fancybox.iframe.bg-gray-100.px-4.py-2.rounded-full.shadow.no-underline.text-gray-500.font-medium(
+                        href="{{ $ctrl.api_url + '/storage/' + file.path }}"
+                        data-fancybox="gallery" data-type="iframe"
+                        ng-repeat="file in $ctrl.note.attachments"
+                    )
+                        i.mdi.mdi-attachment.mr-2
+                        | {{ file.original }}
+
+        .bg-white.p-6.shadow-md.rounded-lg.note-shares(ng-if="$ctrl.note.has_sharing")
+            h5.font-semibold.mb-4 Shares
+
+            #NoteEditUsers.flex.space-x-4.text-gray-500.text-xs
+                span.bg-gray-100.px-4.py-2.rounded-full.shadow.no-underline.font-medium(
+                    ng-repeat="share in $ctrl.note.sharing"
+                )
+                    i.mdi.mdi-account-outline.mr-2
+                    | {{ share.user.name }}
+                    i.mdi.mdi-close-circle-outline.ml-2.text-red-500.cursor-pointer(ng-click="$ctrl.unShare(share.id)")
+

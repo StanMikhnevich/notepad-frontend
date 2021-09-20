@@ -1,0 +1,28 @@
+header
+    nav.bg-white.shadow-md.font-mono(ng-controller="BaseController")
+        .container.max-w-screen-xl.mx-auto
+            .flex.justify-between.h-16
+                .flex
+                    <!-- Logo -->
+                    .flex.flex-shrink-0.items-center
+                        a.font-semibold.text-4xl.text-yellow-300(ui-sref="home")
+                            i.mdi.mdi-note-outline
+                    <!-- Navigation Links -->
+                    div(class="space-x-8 sm:-my-px sm:mx-10 sm:flex")
+                        +navMenuButton('notesAll', 'All')
+                        +navMenuButton('notesPublic', 'Public')
+                        +navMenuButton('notesMy', 'My')
+                        +navMenuButton('notesShared', 'Shared')
+
+                <!-- Search -->
+                .flex-1.border.border-t-0.border-b-0
+                    input#navbarSearchInput.border-0.px-10.h-full.w-full(
+                        style="border: 0 !important; padding: 0 2.75rem !important;"
+                        class="focus:outline-none focus:bg-gray-50"
+                        ng-model="query" type="text" placeholder="Search..."
+                        aria-describedby="AppNavSearch" autocomplete="off" required
+                        )
+
+                <!-- Navigation Links -->
+                .flex
+                    navbar-auth-directive
