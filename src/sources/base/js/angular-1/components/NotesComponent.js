@@ -2,11 +2,13 @@ const NotesComponent = function (
     $q,
     $rootScope,
     $scope,
+    $timeout,
     $state,
     $stateParams,
     appConfigs,
     ModalService,
-    NotesService
+    NotesService,
+    PageLoadingBarService,
 ) {
     let $ctrl = this;
 
@@ -21,17 +23,14 @@ const NotesComponent = function (
     $ctrl.notes = [];
 
     $scope.openCreateNoteModal = () => {
-        // $ctrl.close();
         ModalService.open('createNote', {onSubmit: (value) => $ctrl.loadAllNotes()});
     };
 
     $scope.openEditNoteModal = (noteUID) => {
-        // $ctrl.close();
         ModalService.open('editNote', {noteUID, onSubmit: (value) => $ctrl.loadAllNotes()});
     };
 
     $scope.openShareNoteModal = (noteUID) => {
-        // $ctrl.close();
         ModalService.open('shareNote', {noteUID});
     };
 
@@ -43,36 +42,44 @@ const NotesComponent = function (
     };
 
     $ctrl.$onInit = function () {
+
+        PageLoadingBarService.setProgress(0);
+
         $ctrl.user = JSON.parse(localStorage.getItem('user')) ?? undefined;
 
         $ctrl.per_page = '15';
         $ctrl.order = '-created_at';
 
         $ctrl.loadAllNotes();
+
+        $timeout(() => {
+            PageLoadingBarService.setProgress(100);
+        }, 1000);
+
     }
 
     $ctrl.loadAllNotes = () => {
-        return $q((resolve, reject) =>
-            NotesService.listAll({show: $stateParams.show}).then(res =>
-                resolve($ctrl.notes = {meta: res.data.meta, data: res.data.data}), reject
-            )
-        );
+        return $q((resolve, reject) => {
+            NotesService.listAll({show: $stateParams.show}).then(res => resolve(
+                $ctrl.notes = {meta: res.data.meta, data: res.data.data}
+            ), reject)
+        });
     };
+
 };
 
 module.exports = {
-    // bindings: {
-    //     notes: '<'
-    // },
     controller: [
         '$q',
         '$rootScope',
         '$scope',
+        '$timeout',
         '$state',
         '$stateParams',
         'appConfigs',
         'ModalService',
         'NotesService',
+        'PageLoadingBarService',
         NotesComponent
     ],
     templateUrl: 'assets/tpl/pages/notes.html',

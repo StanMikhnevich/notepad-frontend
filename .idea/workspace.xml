@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="257bce53-90c3-4423-afa4-f522c61bd6d6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/directives/paginators/PaginatorDirective.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/directives/paginators/PaginatorLoaderDirective.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/modules/page-loading-bar/PageLoadingBarModule.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/modules/page-loading-bar/directives/PageLoadingBarDirective.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/modules/page-loading-bar/directives/templates/page-loading-bar.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/modules/page-loading-bar/services/PageLoadingBarService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sources/base/pug/tpl/directives/printables-root.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/note-app.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/angular-app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/angular-app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/NotesComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/NotesComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/NotesShowComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/NotesShowComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/pug/layout/includes/footer.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/pug/layout/includes/footer.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/pug/layout/includes/header.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/pug/layout/includes/header.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/pug/layout/layout.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/pug/layout/layout.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/scss/style.scss" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1yPJMhMAKgkeyN99ZvLVHuscdOf" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.18.0" />
+    <property name="javascript.nodejs.core.library.typings.version" value="12.20.25" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/sources/base/pug/tpl/directives" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\_wamp\www\notepad-frontend-stan\src\sources\base\pug\tpl\directives" />
+      <recent name="C:\_wamp\www\notepad-frontend-stan\src\sources\base\js\angular-1\directives" />
+      <recent name="C:\_wamp\www\notepad-frontend-stan\src\sources\base\js\angular-1\modules" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="257bce53-90c3-4423-afa4-f522c61bd6d6" name="Default Changelist" comment="" />
+      <created>1632147243475</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1632147243475</updated>
+      <workItem from="1632147245471" duration="4600000" />
+      <workItem from="1632215915568" duration="9609000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/sources/sample/js/app.js" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

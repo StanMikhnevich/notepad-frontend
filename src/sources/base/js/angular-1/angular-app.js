@@ -1,9 +1,12 @@
-const app = angular.module('notesApp', [
+require('./modules/page-loading-bar/PageLoadingBarModule');
+
+const app = angular.module('notepadStan', [
     // 'ngAnimate',
     'ui.router',
     'ngCookies',
     'ngLocale',
     'ngSanitize',
+    'pageLoadingBarModule',
 ]);
 
 app.constant('appConfigs', env_data);
