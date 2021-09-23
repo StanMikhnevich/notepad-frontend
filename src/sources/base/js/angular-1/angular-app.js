@@ -56,6 +56,10 @@ app.directive('printablesRoot', require('./directives/printables/PrintableRootDi
 app.directive('printableItem', require('./directives/printables/PrintableItemDirective'));
 app.directive('printableEnabler', require('./directives/printables/PrintableEnablerDirective'));
 
+// Directives - Paginator
+app.directive('paginator', require('./directives/paginators/PaginatorDirective'));
+app.directive('paginatorLoader', require('./directives/paginators/PaginatorLoaderDirective'));
+
 // Providers
 app.provider('ApiRequest', require('./providers/ApiRequestProvider'));
 app.provider('PrintableRoute', require('./providers/PrintableRouteProvider'));

@@ -2,24 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="257bce53-90c3-4423-afa4-f522c61bd6d6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/directives/paginators/PaginatorDirective.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/directives/paginators/PaginatorLoaderDirective.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/modules/page-loading-bar/PageLoadingBarModule.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/modules/page-loading-bar/directives/PageLoadingBarDirective.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/modules/page-loading-bar/directives/templates/page-loading-bar.pug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/modules/page-loading-bar/services/PageLoadingBarService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sources/base/pug/tpl/directives/printables-root.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/note-app.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sources/base/pug/tpl/directives/paginators/paginator-loader.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sources/base/pug/tpl/directives/paginators/paginator.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/angular-app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/angular-app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/NotesComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/NotesComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/NotesShowComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/NotesShowComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sources/base/pug/layout/includes/footer.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/pug/layout/includes/footer.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sources/base/pug/layout/includes/header.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/pug/layout/includes/header.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sources/base/pug/layout/layout.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/pug/layout/layout.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/pug/tpl/pages/notes.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/pug/tpl/pages/notes.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sources/base/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/scss/style.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +36,7 @@
     <property name="javascript.nodejs.core.library.configured.version" value="12.18.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.20.25" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/sources/base/pug/tpl/directives" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -66,7 +55,10 @@
       <option name="presentableId" value="Default" />
       <updated>1632147243475</updated>
       <workItem from="1632147245471" duration="4600000" />
-      <workItem from="1632215915568" duration="9609000" />
+      <workItem from="1632215915568" duration="15152000" />
+      <workItem from="1632249928453" duration="4112000" />
+      <workItem from="1632309897123" duration="5056000" />
+      <workItem from="1632396128891" duration="6629000" />
     </task>
     <servers />
   </component>

@@ -4,14 +4,16 @@ include ../../layout/mixins
     .flex.justify-between.text-xl.px-0.py-8
         .flex.space-x-4.justify-between.py-2
             h2.font-semibold.text-2xl.leading-10.text-gray-500 {{ $ctrl.pageTitle }}
+            span.font-semibold.text-2xl.leading-10.text-gray-300 ({{ $ctrl.notes.meta.total }})
 
-            select.bg-transparent.border-transparent.text-center.cursor-pointer.text-sm(class="focus:outline-none" ng-model="$ctrl.per_page")
-                option(value="15") 15
-                option(value="30") 30
-                option(value="50") 50
-                option(value="100") 100
+            select.bg-transparent.border-transparent.text-center.cursor-pointer.text-sm(
+                class="focus:outline-none"
+                ng-options="ipp for ipp in $ctrl.perPageList" ng-model="$ctrl.filters.per_page" ng-change="setPerPage($ctrl.filters.per_page)"
+            )
 
-            select.bg-transparent.border-transparent.text-center.cursor-pointer.text-sm(class="focus:outline-none" ng-model="$ctrl.order")
+            select.bg-transparent.border-transparent.text-center.cursor-pointer.text-sm(
+                class="focus:outline-none" ng-model="$ctrl.order"
+            )
                 option(value="title") Alphabetical
                 option(value="-created_at") Newest
                 option(value="created_at") Oldest
@@ -41,3 +43,6 @@ include ../../layout/mixins
                     span(ng-if="$ctrl.user.id !== note.user_id") {{ note.user.name }}
 
                     span.float-end.ms-3.text-secondary.text-right.text-xl.font-half-lg {{ note.created_at_time_ago }}<br>{{ note.updated_at_time_ago }}
+
+        .card-section.py-5(ng-if="$ctrl.notes.meta" ng-show="$ctrl.notes.meta.last_page > 1")
+            paginator(meta="$ctrl.notes.meta" filters="$ctrl.filters.values" count-buttons="5" on-page-change="onPageChange(query)")

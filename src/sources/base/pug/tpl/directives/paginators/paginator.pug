@@ -1,0 +1,18 @@
+.table-pagination.text-center
+    //.table-pagination-counter(ng-if="meta.from && meta.to")
+    //    span(ng-bind="meta.from + ' - ' + meta.to + ' '")
+    //    | From&nbsp;
+    //    span(ng-bind="meta.total")
+    .table-pagination-navigation.py-5
+        button(
+            ng-class="meta.current_page == 1 ? 'disabled' : ''" 
+            ng-click="setPage(1)").button.button-default.w-14.text-center.mx-1.py-2
+            i.mdi.mdi-chevron-left
+        button(
+            ng-repeat="page in pages" ng-bind="page"
+            ng-click="setPage(page)"
+            ng-class="page == meta.current_page ? 'bg-yellow-300 shadow-sm rounded-md' : 'button-default'").button.w-10.text-center.mx-1.py-2
+        button(
+            ng-class="meta.current_page == meta.last_page ? 'disabled' : ''" 
+            ng-click="setPage(meta.last_page)").button.button-default.w-14.text-center.mx-1.py-2
+            i.mdi.mdi-chevron-right
