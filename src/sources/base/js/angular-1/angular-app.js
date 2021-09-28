@@ -26,6 +26,7 @@ app.component('modalAuthLoginComponent', require('./components/Modals/ModalAuthL
 app.component('modalAuthRegisterComponent', require('./components/Modals/ModalAuthRegisterComponent'));
 app.component('modalAuthEmailVerifyComponent', require('./components/Modals/ModalAuthEmailVerifyComponent'));
 app.component('modalShowNoteComponent', require('./components/Modals/ModalShowNoteComponent'));
+app.component('modalPrintNoteComponent', require('./components/Modals/ModalPrintNoteComponent'));
 app.component('modalCreateNoteComponent', require('./components/Modals/ModalCreateNoteComponent'));
 app.component('modalEditNoteComponent', require('./components/Modals/ModalEditNoteComponent'));
 app.component('modalShareNoteComponent', require('./components/Modals/ModalShareNoteComponent'));

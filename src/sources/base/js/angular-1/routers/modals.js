@@ -11,5 +11,6 @@ module.exports = [
         ModalRouteProvider.modal('shareNote', {component: 'modalShareNoteComponent'}); // openShareNoteModal()
         ModalRouteProvider.modal('deleteNote', {component: 'modalDeleteNoteComponent'}); // openDeleteNoteModal()
         ModalRouteProvider.modal('showNote', {component: 'modalShowNoteComponent'}); // openNoteModal()
+        ModalRouteProvider.modal('printNote', {component: 'modalPrintNoteComponent'}); // printNoteModal()
     }
 ]

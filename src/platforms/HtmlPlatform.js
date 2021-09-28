@@ -25,7 +25,7 @@ platform.setLibs([
     "angular_animate",
     "angular_cookies",
     "angular_sanitize",
-    // "date_fns",
+    "moment",
     "ui_router",
     "tailwind",
     "babel_polyfill",

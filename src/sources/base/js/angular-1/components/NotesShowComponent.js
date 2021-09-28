@@ -29,8 +29,8 @@ const NotesShowComponent = function (
         });
     };
 
-    $scope.openNoteModal = () => {
-        ModalService.open('showNote', {
+    $scope.printNoteModal = () => {
+        PrintableService.open('noteFull', {
             note: $ctrl.note,
             backend_url: $ctrl.backend_url,
         });

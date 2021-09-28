@@ -6,6 +6,7 @@ const NotesComponent = function (
     $stateParams,
     appConfigs,
     ModalService,
+    PrintableService,
     NotesService,
     PageLoadingBarService,
 ) {
@@ -43,6 +44,13 @@ const NotesComponent = function (
         }, 500);
     };
 
+    $scope.printNoteModal = (note) => {
+        PrintableService.open('noteFull', {
+            note,
+            backend_url: $ctrl.backend_url,
+        });
+    };
+
     $scope.openCreateNoteModal = () => {
         ModalService.open('createNote', {onSubmit: (value) => $scope.onPageChange({})});
     };
@@ -66,6 +74,7 @@ const NotesComponent = function (
 
         PageLoadingBarService.setProgress(0);
 
+        $ctrl.backend_url = appConfigs.backend_url;
         $ctrl.user = JSON.parse(localStorage.getItem('user')) ?? undefined;
 
         $ctrl.filters.per_page = $ctrl.filters.per_page || 15;
@@ -102,6 +111,7 @@ module.exports = {
         '$stateParams',
         'appConfigs',
         'ModalService',
+        'PrintableService',
         'NotesService',
         'PageLoadingBarService',
         NotesComponent

@@ -34,10 +34,13 @@ include ../../layout/mixins
                     i.mx-3.mdi.mdi-attachment(ng-if="note.has_attachments")
 
                 .flex.space-x-8.justify-between.py-2.text-gray-500
-                    span.flex.space-x-4(ng-if="$ctrl.user.id == note.user_id" class="float-end item-actions tr-1 ml-4")
+                    span.flex.space-x-4.float-end.item-actions.tr-1.ml-4(ng-if="$ctrl.user.id == note.user_id")
                         i.mdi.mdi-share.cursor-pointer(ng-click="openShareNoteModal(note.uid)")
                         i.mdi.mdi-pencil.cursor-pointer(ng-click="openEditNoteModal(note.uid)")
                         i.mdi.mdi-close.cursor-pointer.text-red-500(ng-click="openDeleteNoteModal(note.uid)")
+
+                    span.flex.space-x-4.float-end.item-actions.tr-1.ml-4(ng-if="!note.private")
+                        i.mdi.mdi-printer.cursor-pointer(ng-click="printNoteModal(note)")
 
                     span(ng-if="$ctrl.user.id == note.user_id") You
                     span(ng-if="$ctrl.user.id !== note.user_id") {{ note.user.name }}

@@ -7,6 +7,9 @@
 // COMMON
 @import 'includes/common';
 
+// modules
+@import 'includes/printables';
+
 * {scrollbar-width: thin; scrollbar-color: #CCC #EFF6FF;}
 
 .tr-1 {transition: all 0.25s ease-out;}

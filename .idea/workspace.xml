@@ -2,12 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="257bce53-90c3-4423-afa4-f522c61bd6d6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/sources/base/pug/tpl/directives/paginators/paginator-loader.pug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sources/base/pug/tpl/directives/paginators/paginator.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/Modals/ModalPrintNoteComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sources/base/scss/includes/printables.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/platforms/HtmlPlatform.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/platforms/HtmlPlatform.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/angular-app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/angular-app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/Modals/ModalShowNoteComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/Modals/ModalShowNoteComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/NotesComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/NotesComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/NotesShowComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/NotesShowComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/Printables/PrintableNoteComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/Printables/PrintableNoteComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/directives/printables/PrintableEnablerDirective.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/directives/printables/PrintableEnablerDirective.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/routers/modals.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/routers/modals.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/pug/layout/layout.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/pug/layout/layout.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/pug/tpl/pages/notes-show.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/pug/tpl/pages/notes-show.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sources/base/pug/tpl/pages/notes.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/pug/tpl/pages/notes.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/pug/tpl/printables/printable-note.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/pug/tpl/printables/printable-note.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sources/base/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/scss/style.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,15 +45,21 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.18.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.20.25" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/sources/base/pug/tpl/directives" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/sources/base/js/angular-1/services" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\_wamp\www\notepad-frontend-stan\src\sources\base\js\angular-1\services" />
+      <recent name="C:\_wamp\www\notepad-frontend-stan\src\sources\base\scss\includes" />
+      <recent name="C:\_wamp\www\notepad-frontend-stan\src\sources\base\js\angular-1\components\Modals" />
       <recent name="C:\_wamp\www\notepad-frontend-stan\src\sources\base\pug\tpl\directives" />
       <recent name="C:\_wamp\www\notepad-frontend-stan\src\sources\base\js\angular-1\directives" />
-      <recent name="C:\_wamp\www\notepad-frontend-stan\src\sources\base\js\angular-1\modules" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\_wamp\www\notepad-frontend-stan\src\node_modules" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -58,7 +74,9 @@
       <workItem from="1632215915568" duration="15152000" />
       <workItem from="1632249928453" duration="4112000" />
       <workItem from="1632309897123" duration="5056000" />
-      <workItem from="1632396128891" duration="6629000" />
+      <workItem from="1632396128891" duration="14634000" />
+      <workItem from="1632665609625" duration="1806000" />
+      <workItem from="1632749435660" duration="11393000" />
     </task>
     <servers />
   </component>

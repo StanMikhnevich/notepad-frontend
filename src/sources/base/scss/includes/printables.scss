@@ -1,0 +1,39 @@
+body {
+
+    &.printable-only {
+        @media screen {
+            &>printables-root {
+                display: none;
+            }
+        }
+
+        @media print {
+            &>*:not(printables-root) {
+                display: none !important;
+            }
+        }
+    }
+}
+
+@media print {
+    body {
+        background-color: #FFF !important;
+    }
+    .printable {
+        -webkit-print-color-adjust: exact !important;
+
+        &.printable-note {
+            .printable-main-info {
+                border: 1px solid #EBEDF0;
+                box-sizing: border-box;
+                position: relative;
+                //padding: 50px 14px 0px 14px;
+                margin-bottom: 30px;
+
+                .printable-header {
+                    border-bottom: 1px solid #EBEDF0;
+                }
+            }
+        }
+    }
+}

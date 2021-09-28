@@ -1,9 +1,9 @@
 include mixins
 
 doctype
-html(lang="en" ng-app="notepadStan")
+html(lang="en" ng-app="notepadStan" ng-cloak)
     include includes/head
-    body.bg-blue-50(ng-controller="BaseController" modal-scroll-breaker printable-enabler)
+    body.bg-blue-50(ng-controller="BaseController" modal-scroll-braker printable-enabler)
 
         page-loading-bar
 

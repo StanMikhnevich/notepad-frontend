@@ -12,7 +12,7 @@ include ../../layout/mixins
 
             .flex.space-x-4.justify-between
                 div(ng-if="!$ctrl.note.private")
-                    +headerModalIconButton('printer', 'openNoteModal()')
+                    +headerModalIconButton('printer', 'printNoteModal()')
                 .flex.space-x-4.justify-between(ng-if="$ctrl.user.id == $ctrl.note.user_id")
                     .w-12.h-8.bg-white.rounded-lg.no-underline.text-center.shadow-md.cursor-pointer(
                         ng-click="openShareNoteModal($ctrl.note.uid)")

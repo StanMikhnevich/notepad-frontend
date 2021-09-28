@@ -1,30 +1,32 @@
 .printable.printable-note.bg-white
-    .container.max-w-screen-xl.mx-auto.text-gray-500
-        .flex.justify-between.text-xl.px-0.my-8
-            h2.font-semibold.text-2xl.leading-10 {{ $ctrl.note.title }}
+    .printable-main-info
+        .printable-header.flex.space-x-4.justify-between.text-xl.px-0.py-2.text-gray-500
+            .flex.space-x-4.justify-between
+                i.mdi.mdi-note-outline.text-5xl.text-yellow-300
+                .text-2xl.font-semibold.my-2 NOTEPAD STAN
+            .flex.space-x-4.justify-between.my-2
+                span.font-semibold {{ $ctrl.note.user.name }}
+                span.float-end.text-secondary.text-right.text-xl.font-half created: {{ $ctrl.note._created_at }} <br> updated: {{ $ctrl.note._updated_at }}
 
-            .flex.space-x-4.justify-between.py-2.text-gray-500
-                span {{ $ctrl.note.user.name }}
-                span.float-end.ms-3.text-secondary.text-right.text-xl.font-half {{ $ctrl.note.created_at_time_ago }}<br>{{ $ctrl.note.updated_at_time_ago }}
+        .printable-header.text-xl.px-0.text-gray-500.py-4
+            h2.text-2xl.font-semibold.my-2 {{ $ctrl.note.title }}
 
         #NotesItem.text-gray-700
-            .mb-10.p-6.note-item
-                .note-text(ng-bind-html="$ctrl.note.text_md")
+            .mb-10.py-6.note-item
+                .note-text.text-left(ng-bind-html="$ctrl.note.text_md")
 
-                .note-attachmnets.text-gray-500(ng-if="$ctrl.note.has_attachments")
+                .note-attachmnets.text-center.text-gray-500(ng-if="$ctrl.note.has_attachments")
                     hr.my-5
                     h5.font-semibold.mb-4 Attachments
 
-                    #NoteItemAttachments.flex.space-x-4
-                        div(
-                            data-fancybox="gallery" data-type="iframe"
-                            ng-repeat="file in $ctrl.note.attachments"
-                        ) {{ file.original }}
-                            br
-                            div(ng-if="file.type == 'image'")
-                                img.w-full(src="{{ $ctrl.backend_url + '/storage/' + file.path }}")
-                            //div(ng-if="file.type == 'text'")
-                            //    img.w-full(src="{{ $ctrl.backend_url + '/storage/' + file.path }}")
+                    #NoteItemAttachments.grid.grid-cols-2
+                        .text-center(ng-repeat="file in $ctrl.note.attachments" data-fancybox="gallery" data-type="iframe")
+                            span(ng-if="file.type == 'image'") {{ file.original }}
+                                br
+                                img.w-full(ng-src="{{ $ctrl.backend_url }}/storage/{{ file.path }}")
+                            span(ng-if="file.type == 'text'") {{ file.original }}
+                                br
+                                i.mdi.mdi-file-document-outline.text-8xl.mt-16
 
             .note-shares.text-gray-500(ng-if="$ctrl.note.has_sharing")
                 h5.font-semibold.mb-4 Shared with
