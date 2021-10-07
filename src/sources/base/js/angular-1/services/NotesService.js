@@ -2,11 +2,12 @@ const sprintf = require('sprintf-js').sprintf;
 
 const NotesService = function (
     $rootScope,
-    ApiRequest
+    ApiRequest,
+    CredentialsService,
 ) {
     return new (function () {
-
-        const prefix = (localStorage.getItem("user") === null) ? '/public' : '';
+        const user = CredentialsService.getUser();
+        const prefix = (user === undefined || user.email_verified_at == null) ? '/public' : '';
 
         this.list = function (note_id, query = {}) {
             return ApiRequest.get('/notes', query);
@@ -79,5 +80,6 @@ const NotesService = function (
 module.exports = [
     '$rootScope',
     'ApiRequest',
+    'CredentialsService',
     NotesService
 ];

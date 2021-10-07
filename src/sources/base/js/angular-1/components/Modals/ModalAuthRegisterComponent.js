@@ -1,9 +1,10 @@
-let ModalAuthLoginComponent = function(
+const ModalAuthRegisterComponent = function(
     $rootScope,
     AuthService,
     // FormBuilderService,
-    // CredentialsService,
-    ModalService
+    ModalService,
+    CredentialsService,
+    PageLoadingBarService,
 ) {
     let $ctrl = this;
 
@@ -13,6 +14,8 @@ let ModalAuthLoginComponent = function(
         password: '',
         password_confirmation: ''
     }
+
+    $ctrl.loading = false;
 
     $ctrl.$onInit = function () {
         // $(document).bind('keydown', (e) => {
@@ -34,16 +37,20 @@ let ModalAuthLoginComponent = function(
 
     $ctrl.openAuthVerifyModal = () => {
         $ctrl.close();
-        ModalService.open('authVerify', {})
+        ModalService.open('authEmailVerify', {})
     };
 
     $ctrl.register = () => {
-        AuthService.register($ctrl.auth).then(res => {
-            localStorage.setItem('user', JSON.stringify(res.data.user));
+        PageLoadingBarService.setProgress(0);
 
+        AuthService.register($ctrl.auth).then(res => {
+            console.log(res.data)
+            CredentialsService.setUser(res.data.user);
+
+            PageLoadingBarService.setProgress(100);
             $ctrl.openAuthVerifyModal();
             // $state.go('notesMy');
-            document.location.reload();
+            // document.location.reload();
         })
     };
 
@@ -60,9 +67,10 @@ module.exports = {
         'AuthService',
         // 'IdentityService',
         // 'FormBuilderService',
-        // 'CredentialsService',
         'ModalService',
-        ModalAuthLoginComponent
+        'CredentialsService',
+        'PageLoadingBarService',
+        ModalAuthRegisterComponent
     ],
     templateUrl: () => {
         return 'assets/tpl/modals/modal-register.html';

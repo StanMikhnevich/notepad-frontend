@@ -3,13 +3,15 @@ const ModalAuthLoginComponent = function (
     $state,
     $rootScope,
     ModalService,
-    AuthService
+    AuthService,
+    CredentialsService,
 ) {
     let $ctrl = this;
 
     $ctrl.auth = {
         email: '',
-        password: ''
+        password: '',
+        remember_me: '',
     }
 
     $ctrl.$onInit = function () {
@@ -32,8 +34,10 @@ const ModalAuthLoginComponent = function (
 
     $ctrl.login = () => {
         AuthService.login($ctrl.auth).then(res => {
-            localStorage.setItem('accessToken', res.data.token);
-            localStorage.setItem('user', JSON.stringify(res.data.user));
+            CredentialsService.setAccessToken(res.data.token);
+            CredentialsService.setUser(res.data.user);
+            // localStorage.setItem('accessToken', res.data.token);
+            // localStorage.setItem('user', JSON.stringify(res.data.user));
 
             $rootScope.auth = true;
 
@@ -55,6 +59,7 @@ module.exports = {
         '$rootScope',
         'ModalService',
         'AuthService',
+        'CredentialsService',
         ModalAuthLoginComponent
     ],
     templateUrl: 'assets/tpl/modals/modal-login.html',

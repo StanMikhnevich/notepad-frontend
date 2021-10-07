@@ -13,13 +13,13 @@
 
         #NotesItem.text-gray-700
             .mb-10.py-6.note-item
-                .note-text.text-left(ng-bind-html="$ctrl.note.text_md")
+                .note-text.text-left.prose.max-w-full(ng-bind-html="$ctrl.note.text_md")
 
                 .note-attachmnets.text-center.text-gray-500(ng-if="$ctrl.note.has_attachments")
                     hr.my-5
                     h5.font-semibold.mb-4 Attachments
 
-                    #NoteItemAttachments.grid.grid-cols-2
+                    #NoteItemAttachments.grid.grid-cols-2.text-gray-500
                         .text-center(ng-repeat="file in $ctrl.note.attachments" data-fancybox="gallery" data-type="iframe")
                             span(ng-if="file.type == 'image'") {{ file.original }}
                                 br
@@ -28,10 +28,8 @@
                                 br
                                 i.mdi.mdi-file-document-outline.text-8xl.mt-16
 
-            .note-shares.text-gray-500(ng-if="$ctrl.note.has_sharing")
+            .note-users.text-center.text-gray-500(ng-if="$ctrl.note.has_sharing")
                 h5.font-semibold.mb-4 Shared with
 
-                #NoteItemUsers.flex.space-x-4.text-gray-500.text-xs
-                    span.px-4.py-2.no-underline.font-medium(
-                        ng-repeat="share in $ctrl.note.sharing"
-                    ) {{ share.user.name }}
+                #NoteItemUsers.grid.grid-cols-5.text-gray-500
+                    .text-center(ng-repeat="share in $ctrl.note.sharing") {{ share.user.name }}

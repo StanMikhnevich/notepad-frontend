@@ -20,10 +20,25 @@ module.exports = [
             component: "authRegisterComponent",
         });
 
+        // $stateProvider.state({
+        //     name: "authVerified",
+        //     url: "/verified",
+        //     component: "authVerifiedComponent",
+        // });
+
         $stateProvider.state({
             name: "home",
             url: "/",
             component: "homeComponent",
+        });
+
+        $stateProvider.state({
+            name: "userVerified",
+            url: "/verified",
+            component: "homeComponent",
+            params: {
+                verified: 1,
+            },
         });
 
         $stateProvider.state({

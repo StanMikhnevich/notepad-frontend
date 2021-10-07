@@ -2,13 +2,14 @@ let ModalAuthLoginComponent = function(
     $rootScope,
     AuthService,
     // FormBuilderService,
-    // CredentialsService,
+    CredentialsService,
     ModalService
 ) {
     let $ctrl = this;
 
     $ctrl.$onInit = function () {
-        $ctrl.user = JSON.parse(localStorage.getItem('user')) ?? undefined;
+        $ctrl.user = CredentialsService.getUser();
+        $ctrl.message = '';
 
         // $(document).bind('keydown', (e) => {
         //     $timeout(function() {
@@ -24,7 +25,9 @@ let ModalAuthLoginComponent = function(
 
     $ctrl.resend = () => {
         AuthService.resendVerify({user_id: $ctrl.user.id}).then(res => {
-
+            if(res.data.success) {
+                $ctrl.message = res.data.message;
+            }
         })
     };
 
@@ -41,7 +44,7 @@ module.exports = {
         'AuthService',
         // 'IdentityService',
         // 'FormBuilderService',
-        // 'CredentialsService',
+        'CredentialsService',
         'ModalService',
         ModalAuthLoginComponent
     ],

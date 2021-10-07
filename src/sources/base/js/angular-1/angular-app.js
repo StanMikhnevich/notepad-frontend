@@ -18,8 +18,6 @@ app.controller('BaseController', require('./controllers/BaseController'));
 app.component('homeComponent', require('./components/HomeComponent'));
 app.component('notesComponent', require('./components/NotesComponent'));
 app.component('notesShowComponent', require('./components/NotesShowComponent'));
-app.component('notesCreateComponent', require('./components/NotesCreateComponent'));
-app.component('notesEditComponent', require('./components/NotesEditComponent'));
 
 // Components - Modal
 app.component('modalAuthLoginComponent', require('./components/Modals/ModalAuthLoginComponent'));
@@ -82,7 +80,7 @@ if (!env_data.html5ModeEnabled) {
     if (hash.length > 3 && hash[hash.length - 1] == '/') {
         document.location.hash = hash.slice(0, hash.length - 1);
     } else if (hash.length < 3) {
-        document.location.hash = '#!/';
+        document.location.hash = '#!/notes/all';
     }
 }
 

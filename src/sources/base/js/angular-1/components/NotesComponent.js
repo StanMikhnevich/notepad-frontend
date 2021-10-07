@@ -9,6 +9,7 @@ const NotesComponent = function (
     PrintableService,
     NotesService,
     PageLoadingBarService,
+    CredentialsService,
 ) {
     let $ctrl = this;
 
@@ -75,7 +76,7 @@ const NotesComponent = function (
         PageLoadingBarService.setProgress(0);
 
         $ctrl.backend_url = appConfigs.backend_url;
-        $ctrl.user = JSON.parse(localStorage.getItem('user')) ?? undefined;
+        $ctrl.user = CredentialsService.getUser();
 
         $ctrl.filters.per_page = $ctrl.filters.per_page || 15;
         $ctrl.order = $ctrl.order || "-created_at";
@@ -114,6 +115,7 @@ module.exports = {
         'PrintableService',
         'NotesService',
         'PageLoadingBarService',
+        'CredentialsService',
         NotesComponent
     ],
     templateUrl: 'assets/tpl/pages/notes.html',

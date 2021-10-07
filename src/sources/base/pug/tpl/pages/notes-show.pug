@@ -20,13 +20,13 @@ include ../../layout/mixins
                     .w-12.h-8.bg-white.rounded-lg.no-underline.text-center.shadow-md.cursor-pointer(
                         ng-click="openEditNoteModal($ctrl.note.uid)")
                         i.mdi.mdi-pencil
-                +headerModalIconButton('plus', 'openCreateNoteModal()')
+                //+headerModalIconButton('plus', 'openCreateNoteModal()')
 
     #NotesItem.text-gray-700
         .bg-white.mb-10.p-6.shadow-md.rounded-lg.note-item
-            .note-text(ng-bind-html="$ctrl.note.text_md")
+            .note-text.prose.max-w-full(ng-bind-html="$ctrl.note.text_md")
 
-            .note-attachmnets.text-gray-500(ng-if="$ctrl.note.has_attachments")
+            .note-attachments.text-gray-500(ng-if="$ctrl.note.has_attachments")
                 hr.my-5
                 h5.font-semibold.mb-4 Attachments
 

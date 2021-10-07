@@ -1,20 +1,27 @@
 const HomeComponent = function (
-    $rootScope,
-    $state,
+    appConfigs,
     $scope,
-    $stateParams
+    $state,
+    $stateParams,
+    CredentialsService,
 ) {
     let $ctrl = this;
-    $ctrl.displayNavBar = $rootScope.displayNavBar;
+
+    if($stateParams.verified) {
+        CredentialsService.verifyUser();
+        $state.go('notesAll');
+        document.location.replace('/');
+    }
 
 };
 
 module.exports = {
     controller: [
-        '$state',
+        'appConfigs',
         '$scope',
+        '$state',
         '$stateParams',
-        '$rootScope',
+        'CredentialsService',
         HomeComponent
     ],
     templateUrl: 'assets/tpl/pages/home.html',

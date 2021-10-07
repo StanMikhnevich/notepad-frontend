@@ -40,7 +40,7 @@ module.exports = function () {
                         'Accept': 'application/json',
                         // 'Accept-Language': localStorage.getItem('lang') || 'nl',
                         'Content-Type': 'application/json',
-                        'Authorization': 'Bearer ' + CredentialsService.get(),
+                        'Authorization': 'Bearer ' + CredentialsService.getAccessToken(),
                     };
                 };
 

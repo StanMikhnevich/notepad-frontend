@@ -8,4 +8,5 @@
                 i.mdi.mdi-close.cursor-pointer(ng-click="$ctrl.close()")
 
             p Your account is not verified
+            p.text-green-500(ng-model="$ctrl.message")
             button.bg-yellow-300.py-4.w-full.rounded-lg(type="button" ng-click="$ctrl.resend()") Send verification email

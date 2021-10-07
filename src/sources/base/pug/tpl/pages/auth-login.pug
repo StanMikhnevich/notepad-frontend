@@ -21,7 +21,7 @@
 
             .mb-5
                 label.inline-flex.items-center
-                    input#AppLoginModalRemember.form-checkbox(type="checkbox" name="remember" ng-model="auth.remember" )
+                    input#AppLoginModalRemember.form-checkbox(type="checkbox" name="remember_me" ng-model="auth.remember_me" )
                     span.ml-2 Remember me
 
             button.bg-yellow-300.py-4.w-full.rounded-lg(type="button" ng-if="($ctrl.auth.email.length > 0 && $ctrl.auth.password.length > 0)" ng-click="$ctrl.login()") Login

@@ -10,6 +10,7 @@ const NotesShowComponent = function (
     ModalService,
     NotesService,
     PageLoadingBarService,
+    CredentialsService,
 ) {
     let $ctrl = this;
 
@@ -36,14 +37,6 @@ const NotesShowComponent = function (
         });
     };
 
-    // $scope.printNote = () => {
-    //     PrintableService.open('noteFull', {
-    //         note: $ctrl.note,
-    //         backend_url: $ctrl.backend_url,
-    //     });
-    // };
-
-
     $scope.openShareNoteModal = (noteUID) => {
         // $ctrl.close();
         ModalService.open('shareNote', {
@@ -56,13 +49,21 @@ const NotesShowComponent = function (
 
         PageLoadingBarService.setProgress(0);
 
-        $ctrl.user = JSON.parse(localStorage.getItem('user')) ?? undefined;
+        $ctrl.user = CredentialsService.getUser();
         $ctrl.displayNavBar = $rootScope.displayNavBar;
         $ctrl.backend_url = appConfigs.backend_url;
 
         $ctrl.loadNote();
 
         $timeout(() => {
+            if(!$ctrl.note) {
+                $ctrl.note = {
+                    text_md: '<p class="text-center mt-3 py-4"><i class="mdi mdi-lock text-7xl text-gray-300"></i><br>This is private note</p>',
+                    user_id: 0,
+                    user: {name: ''}
+                }
+            }
+
             PageLoadingBarService.setProgress(100);
         }, 1000);
 
@@ -96,6 +97,7 @@ module.exports = {
         'ModalService',
         'NotesService',
         'PageLoadingBarService',
+        'CredentialsService',
         NotesShowComponent
     ],
     templateUrl: 'assets/tpl/pages/notes-show.html',

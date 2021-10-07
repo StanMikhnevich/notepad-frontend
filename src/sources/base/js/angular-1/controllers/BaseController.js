@@ -1,16 +1,18 @@
 const BaseController = function(
     $q,
-    $rootScope,
     $scope,
     $http,
     $state,
     $cookies,
     appConfigs,
+    CredentialsService,
 ) {
     let $ctrl = this;
 
-    $rootScope.$state = $state;
-    $rootScope.appConfigs = appConfigs;
+    $ctrl.$state = $state;
+    $ctrl.appConfigs = appConfigs;
+
+    $scope.user = CredentialsService.getUser();
 
     // $translate.use('en');
 }
@@ -22,5 +24,6 @@ module.exports = [
     '$state',
     '$cookies',
     'appConfigs',
+    'CredentialsService',
     BaseController
 ];

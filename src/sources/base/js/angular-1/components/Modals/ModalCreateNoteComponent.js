@@ -5,14 +5,15 @@ const ModalCreateNoteComponent = function (
     $state,
     $stateParams,
     ModalService,
-    NotesService
+    NotesService,
+    CredentialsService,
 ) {
     let $ctrl = this;
 
     $ctrl.pageTitle = $stateParams.pageTitle;
 
     $ctrl.$onInit = function () {
-        $ctrl.user = JSON.parse(localStorage.getItem('user')) ?? undefined;
+        $ctrl.user = CredentialsService.getUser();
         $ctrl.displayNavBar = $rootScope.displayNavBar;
 
         $ctrl.note = {
@@ -44,6 +45,7 @@ module.exports = {
         '$stateParams',
         'ModalService',
         'NotesService',
+        'CredentialsService',
         ModalCreateNoteComponent
     ],
     templateUrl: 'assets/tpl/modals/modal-note-create.html',

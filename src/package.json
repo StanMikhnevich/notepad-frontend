@@ -53,6 +53,7 @@
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.7",
     "@mdi/font": "^5.9.55",
+    "@tailwindcss/typography": "^0.4.1",
     "@uirouter/angularjs": "^1.0.29",
     "angular": "^1.8.2",
     "angular-animate": "^1.8.2",
@@ -62,6 +63,7 @@
     "angular-sanitize": "^1.8.2",
     "date-fns": "^2.23.0",
     "jquery": "^3.6.0",
+    "moment": "^2.29.1",
     "sprintf-js": "^1.1.2",
     "tailwindcss": "^2.2.7",
     "underscore": "^1.13.1",

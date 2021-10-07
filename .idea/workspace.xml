@@ -2,19 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="257bce53-90c3-4423-afa4-f522c61bd6d6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/Modals/ModalPrintNoteComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sources/base/scss/includes/printables.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/platforms/HtmlPlatform.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/platforms/HtmlPlatform.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/tailwind.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/tailwind.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/angular-app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/angular-app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/Modals/ModalShowNoteComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/Modals/ModalShowNoteComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/HomeComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/HomeComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/Modals/ModalAuthEmailVerifyComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/Modals/ModalAuthEmailVerifyComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/Modals/ModalAuthLoginComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/Modals/ModalAuthLoginComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/Modals/ModalAuthRegisterComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/Modals/ModalAuthRegisterComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/Modals/ModalCreateNoteComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/Modals/ModalCreateNoteComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/NotesComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/NotesComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/NotesCreateComponent.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/NotesEditComponent.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/NotesShowComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/NotesShowComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/Printables/PrintableNoteComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/components/Printables/PrintableNoteComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/directives/printables/PrintableEnablerDirective.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/directives/printables/PrintableEnablerDirective.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/routers/modals.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/routers/modals.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sources/base/pug/layout/layout.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/pug/layout/layout.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/controllers/BaseController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/controllers/BaseController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/directives/navbarAuthDirective.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/directives/navbarAuthDirective.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/providers/ApiRequestProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/providers/ApiRequestProvider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/routers/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/routers/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/services/CredentialsService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/services/CredentialsService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/js/angular-1/services/NotesService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/angular-1/services/NotesService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/pug/layout/includes/header.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/pug/layout/includes/header.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/pug/tpl/directives/navbar-auth-directive.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/pug/tpl/directives/navbar-auth-directive.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/pug/tpl/modals/modal-note-create.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/pug/tpl/modals/modal-note-create.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/pug/tpl/modals/modal-note-edit.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/pug/tpl/modals/modal-note-edit.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/pug/tpl/modals/modal-verify.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/pug/tpl/modals/modal-verify.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/pug/tpl/pages/auth-login.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/pug/tpl/pages/auth-login.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sources/base/pug/tpl/pages/home.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/pug/tpl/pages/home.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sources/base/pug/tpl/pages/notes-show.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/pug/tpl/pages/notes-show.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sources/base/pug/tpl/pages/notes.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/pug/tpl/pages/notes.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sources/base/pug/tpl/printables/printable-note.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/sources/base/pug/tpl/printables/printable-note.pug" afterDir="false" />
@@ -30,6 +45,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1yPJMhMAKgkeyN99ZvLVHuscdOf" />
   <component name="ProjectLevelVcsManager">
@@ -76,7 +99,14 @@
       <workItem from="1632309897123" duration="5056000" />
       <workItem from="1632396128891" duration="14634000" />
       <workItem from="1632665609625" duration="1806000" />
-      <workItem from="1632749435660" duration="11393000" />
+      <workItem from="1632749435660" duration="12200000" />
+      <workItem from="1632819288863" duration="29736000" />
+      <workItem from="1632925361254" duration="5257000" />
+      <workItem from="1632991677217" duration="5822000" />
+      <workItem from="1633090559430" duration="1194000" />
+      <workItem from="1633261684994" duration="16053000" />
+      <workItem from="1633437197133" duration="2137000" />
+      <workItem from="1633449567837" duration="1251000" />
     </task>
     <servers />
   </component>

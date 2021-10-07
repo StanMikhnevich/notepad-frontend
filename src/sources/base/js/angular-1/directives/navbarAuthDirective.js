@@ -4,14 +4,14 @@ const navbarAuthDirective = function (
     $element,
     appConfigs,
     ModalService,
+    CredentialsService,
 ) {
     let $ctrl = this;
 
-    $scope.user = JSON.parse(localStorage.getItem('user')) ?? false;
+    $scope.user = CredentialsService.getUser();
 
     $scope.logout = () => {
-        localStorage.removeItem('accessToken');
-        localStorage.removeItem('user');
+        CredentialsService.clear();
 
         $state.go('notesAll');
         document.location.reload();
@@ -44,6 +44,7 @@ module.exports = () => {
             '$element',
             'appConfigs',
             'ModalService',
+            'CredentialsService',
             navbarAuthDirective
         ],
         templateUrl: 'assets/tpl/directives/navbar-auth-directive.html',
