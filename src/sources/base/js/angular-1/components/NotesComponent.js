@@ -28,6 +28,10 @@ const NotesComponent = function (
 
     $ctrl.notes = [];
 
+    $scope.setViewMode = (mode) => {
+        $ctrl.viewMode = mode;
+    }
+
     $scope.setPerPage = (per_page) => {
         $scope.onPageChange({});
     }
@@ -80,6 +84,7 @@ const NotesComponent = function (
 
         $ctrl.filters.per_page = $ctrl.filters.per_page || 15;
         $ctrl.order = $ctrl.order || "-created_at";
+        $ctrl.viewMode = 'list';
 
         $scope.onPageChange({});
 
@@ -88,14 +93,6 @@ const NotesComponent = function (
         }, 500);
 
     }
-
-    // $ctrl.loadNotes = () => {
-    //     return $q((resolve, reject) => {
-    //         NotesService.listAll({show: $stateParams.show}).then(res => resolve(
-    //             $ctrl.notes = {meta: res.data.meta, data: res.data.data}
-    //         ), reject)
-    //     });
-    // };
 
 };
 

@@ -2,7 +2,7 @@ include ../../layout/mixins
 
 .container.max-w-screen-xl.mx-auto.text-gray-500
     .flex.justify-between.text-xl.px-0.py-8
-        .flex.space-x-4.justify-between.py-2
+        .flex.space-x-4.justify-between.items-center.py-2
             h2.font-semibold.text-2xl.leading-10.text-gray-500 {{ $ctrl.pageTitle }}
             span.font-semibold.text-2xl.leading-10.text-gray-300 ({{ $ctrl.notes.meta.total }})
 
@@ -19,33 +19,35 @@ include ../../layout/mixins
                 option(value="created_at") Oldest
                 option(value="user.name") By user
 
+            span.text-center.space-x-2.text-gray-300(style="font-size: 24px;")
+                i.mdi.mdi-view-module.cursor-pointer(ng-class="{ 'text-gray-500': $ctrl.viewMode === 'grid' }" ng-click="setViewMode('grid')")
+                i.mdi.mdi-view-sequential.cursor-pointer(ng-class="{ 'text-gray-500': $ctrl.viewMode === 'list' }" ng-click="setViewMode('list')")
+
         .flex.space-x-4.justify-between.py-2(ng-if="$ctrl.user && $ctrl.user.email_verified_at")
             +headerModalIconButton('plus', 'openCreateNoteModal()')
 
-    #NotesList
-        div.bg-white.mb-5.p-4.px-6.shadow-md.rounded-lg.note-item.tr-1(id="NoteItem{{ note.id }}" class="hover:shadow-lg"
+    #NotesList(ng-class="{ 'grid grid-cols-3 gap-5 view-grid': $ctrl.viewMode === 'grid' }")
+
+        .bg-white.p-4.px-6.shadow-md.rounded-lg.note-item.tr-1(
+            ng-class="{ 'text-gray-500': $ctrl.viewMode === 'grid', 'mb-5': $ctrl.viewMode === 'list' }"
+            id="NoteItem{{ note.id }}"
+            class="hover:shadow-lg"
             ng-repeat="note in $ctrl.notes.data | filter:search | orderBy:$ctrl.order"
         )
-            .flex.space-x-8.justify-between
-                span.py-2.text-gray-500
+            .flex.flex-wrap.justify-between(ng-class="{ 'space-x-0': $ctrl.viewMode === 'grid', 'space-x-8' : $ctrl.viewMode === 'list' }" )
+                span.py-2.text-gray-500.note-title(ng-class="{ 'w-full': $ctrl.viewMode === 'grid' }")
                     a.text-gray-500.no-underline.font-medium.text-xl(ui-sref="noteShow({noteUID: note.uid })") {{ note.title }}
 
                     i.mx-3.mdi.mdi-lock(ng-if="note.private")
                     i.mx-3.mdi.mdi-attachment(ng-if="note.has_attachments")
 
-                .flex.space-x-8.justify-between.py-2.text-gray-500
-                    //span.flex.space-x-4.float-end.item-actions.tr-1.ml-4(ng-if="$ctrl.user.id == note.user_id")
-                    //    i.mdi.mdi-share.cursor-pointer(ng-click="openShareNoteModal(note.uid)")
-                    //    i.mdi.mdi-pencil.cursor-pointer(ng-click="openEditNoteModal(note.uid)")
-                    //    i.mdi.mdi-close.cursor-pointer.text-red-500(ng-click="openDeleteNoteModal(note.uid)")
-                    //
-                    //span.flex.space-x-4.float-end.item-actions.tr-1.ml-4(ng-if="!note.private")
-                    //    i.mdi.mdi-printer.cursor-pointer(ng-click="printNoteModal(note)")
-
+                .flex.space-x-8.justify-between.text-gray-500(
+                    ng-class="{ 'w-full': $ctrl.viewMode === 'grid', 'py-2': $ctrl.viewMode === 'list' }"
+                )
                     span(ng-if="$ctrl.user.id == note.user_id") You
                     span(ng-if="$ctrl.user.id !== note.user_id") {{ note.user.name }}
 
-                    span.float-end.ms-3.text-secondary.text-right.text-xl.font-half-lg
+                    span.float-end.ms-3.text-secondary.text-right.text-xl.font-half-lg.note-created-updated
                         span(title="{{ note.created_at }}") {{ note.created_at_time_ago }}
                         br
                         span(title="{{ note.updated_at }}") {{ note.updated_at_time_ago }}
@@ -77,5 +79,5 @@ include ../../layout/mixins
                                     | Print
 
 
-        .card-section.py-5(ng-if="$ctrl.notes.meta" ng-show="$ctrl.notes.meta.last_page > 1")
-            paginator(meta="$ctrl.notes.meta" filters="$ctrl.filters.values" count-buttons="5" on-page-change="onPageChange(query)")
+    .card-section.py-5(ng-if="$ctrl.notes.meta" ng-show="$ctrl.notes.meta.last_page > 1")
+        paginator(meta="$ctrl.notes.meta" filters="$ctrl.filters.values" count-buttons="5" on-page-change="onPageChange(query)")
